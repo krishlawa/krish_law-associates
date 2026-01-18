@@ -364,3 +364,17 @@ document.querySelectorAll('.service-link').forEach(link => {
 // Console welcome message
 console.log('%c🏛️ Advocate Krishna Moorthy - Legal Consultation', 'font-size: 16px; font-weight: bold; color: #062A44;');
 console.log('%cWebsite built with care for optimal conversion and user experience', 'font-size: 12px; color: #6C757D;');
+
+// Animate Form Lock (Open/Close Cycle)
+const formLock = document.querySelector('.form-trust-lock');
+if (formLock) {
+    setInterval(() => {
+        if (formLock.classList.contains('fa-lock-open')) {
+            formLock.classList.remove('fa-lock-open');
+            formLock.classList.add('fa-lock');
+        } else {
+            formLock.classList.remove('fa-lock');
+            formLock.classList.add('fa-lock-open');
+        }
+    }, 2000); // Toggle every 2 seconds
+}
