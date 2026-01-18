@@ -1535,6 +1535,47 @@ h3 {
     animation: fadeInSection 0.8s ease-out;
 }
 
+/* Confidential Badge in Form */
+.form-header-trust {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.confidential-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: rgba(37, 211, 102, 0.1);
+    color: var(--success-green-dark);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border: 1px solid rgba(37, 211, 102, 0.2);
+}
+
+.form-lock-icon {
+    font-size: 1rem;
+    animation: lockPulse 2s infinite;
+}
+
+@keyframes lockPulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
 .review-cta-wrapper h3 {
     margin-bottom: 1rem;
     color: var(--primary-navy);
