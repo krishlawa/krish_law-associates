@@ -51,11 +51,7 @@ body {
     color: var(--text-dark);
     line-height: 1.6;
     background-color: var(--background-white);
-    /* Site Protection: Disable text selection */
-    user-select: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
+
 }
 
 .container {
@@ -1490,6 +1486,34 @@ h3 {
 
     .whatsapp-float i {
         font-size: 1.75rem;
+    }
+
+    /* FIX: Remove staggered animation delay on mobile so cards appear instantly */
+    .area-card:nth-child(n) {
+        transition-delay: 0s !important;
+    }
+
+    /* FIX: Ensure Map has height on mobile */
+    .contact-map,
+    .contact-map iframe {
+        min-height: 350px;
+        height: 350px;
+        display: block;
+    }
+
+    /* FIX: Compact Footer Grid for Mobile */
+    .popular-searches-grid {
+        gap: 0.5rem;
+        justify-content: center;
+        /* keep centered cloud */
+    }
+
+    .popular-searches-grid span {
+        font-size: 0.7rem;
+        padding: 4px 10px;
+        line-height: 1.2;
+        /* Ensure they don't stretch to full width */
+        flex: 0 1 auto;
     }
 }
 

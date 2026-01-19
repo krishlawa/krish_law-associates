@@ -314,17 +314,7 @@ const animateOnScroll = () => {
 
 // Initialize animations when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    // Site Protection: Disable Right-click and selection
-    document.addEventListener('contextmenu', (e) => e.preventDefault());
-    document.addEventListener('selectstart', (e) => e.preventDefault());
-    document.addEventListener('keydown', (e) => {
-        if (e.ctrlKey && (e.key === 'c' || e.key === 'u' || e.key === 's' || e.key === 'p' || e.key === 'a')) {
-            e.preventDefault();
-        }
-        if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I') || (e.ctrlKey && e.shiftKey && e.key === 'J')) {
-            e.preventDefault();
-        }
-    });
+    // Site Protection removed to allow inspection
     animateOnScroll();
 });
 
