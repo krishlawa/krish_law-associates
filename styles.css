@@ -1491,6 +1491,9 @@ h3 {
     /* FIX: Remove staggered animation delay on mobile so cards appear instantly */
     .area-card:nth-child(n) {
         transition-delay: 0s !important;
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
     }
 
     /* FIX: Ensure Map has height on mobile */
