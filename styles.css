@@ -1705,3 +1705,13 @@ h3 {
 .area-card:nth-child(14) {
     transition-delay: 1.4s;
 }
+
+/* Mobile & Tablet Text Selection Protection */
+@media (max-width: 1024px) {
+    body {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+}
