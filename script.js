@@ -313,8 +313,14 @@ const animateOnScroll = () => {
 };
 
 // Initialize animations when DOM is loaded
+// Initialize animations when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    // Site Protection removed to allow inspection
+    // FORCE ENABLE: Ensure context menu and selection work
+    document.oncontextmenu = null;
+    document.onselectstart = null;
+    document.body.oncontextmenu = null;
+    document.body.onselectstart = null;
+
     animateOnScroll();
 });
 
