@@ -322,7 +322,49 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.onselectstart = null;
 
     animateOnScroll();
+
+    // --- DESKTOP CALL MODAL LOGIC ---
+    const modal = document.getElementById("callModal");
+    const closeBtn = document.getElementsByClassName("close-modal")[0];
+    const callBtns = document.querySelectorAll(".desktop-call-btn");
+
+    // Only activate modal logic if we are on desktop
+    if (window.innerWidth > 768) {
+        callBtns.forEach(btn => {
+            btn.addEventListener('click', function (e) {
+                e.preventDefault(); // Stop default tel: action
+                modal.style.display = "block";
+            });
+        });
+    }
+
+    // Close Modal
+    if (closeBtn) {
+        closeBtn.onclick = function () {
+            modal.style.display = "none";
+        }
+    }
+
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
 });
+
+// Copy Phone Number Function
+function copyPhoneNumber() {
+    const phoneNum = document.getElementById("phoneNumber").innerText;
+    navigator.clipboard.writeText(phoneNum).then(function () {
+        const successMsg = document.getElementById("copySuccess");
+        successMsg.style.opacity = "1";
+        setTimeout(() => {
+            successMsg.style.opacity = "0";
+        }, 2000);
+    }, function (err) {
+        console.error('Async: Could not copy text: ', err);
+    });
+}
 
 // Track CTA clicks (for analytics)
 const trackCTAClick = (ctaType) => {

@@ -1,0 +1,16 @@
+{
+  "name": "krish-law-associates",
+  "version": "1.0.0",
+  "description": "Legal services website for Krish Law & Associates",
+  "main": "src/script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "lawyer",
+    "chennai",
+    "legal"
+  ],
+  "author": "",
+  "license": "ISC"
+}
